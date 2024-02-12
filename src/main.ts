@@ -284,7 +284,7 @@ function startTurn() {
 function endTurn() {
   isTurnActive = false;
 
-  // Actualizar el número de turno
+  // Actualizar el numero de turno
   currentTurn++;
 
   if (currentTurn > 25) {

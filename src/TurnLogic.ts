@@ -7,5 +7,7 @@ export function showTurn(turnNumber: number) {
       turnElement.textContent = `TURNO ${turnNumber}`;
     }
   }
+
+  export function updateTurn(){}
   
   
