@@ -7,28 +7,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="flav_icon" href="./img/genericIcon2.png">
-    
-    <!--Config-->
-    <title>First Title - Test</title>
+
+    <!-- Config -->
+    <title>Bingo Game - Test</title>
     <link rel="stylesheet" href="styles.css">
-    <!--Fuentes de google-->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
-    <!--Primera seccion-->
-    <header>
-        <section>
-            <h1>Welcome... Probando pagina</h1>
-            <div class="header_content">
-                <p>Prueba contenido header</p>
+    <div id="overlay" style="display: none;">
+        <span id="countdown-text">3</span>
+        <h2>Comienza el juego!</h2>
+    </div>
 
-            </div>
+    <section id="new-game">
+        <h2>Nuevo Juego</h2>
+        <form id="new-game-form">
+            <input type="text" id="player1" placeholder="Nombre Jugador 1" required>
+            <input type="text" id="player2" placeholder="Nombre Jugador 2" required>
+            <input type="text" id="player3" placeholder="Nombre Jugador 3" required>
+            <input type="text" id="player4" placeholder="Nombre Jugador 4" required>
+            <select id="card-size" required>
+                <option value="3">3x3</option>
+                <option value="4">4x4</option>
+                <option value="5">5x5</option>
+            </select>
+            <button id="submit-btn" onclick="startGame()" disabled>Iniciar Juego</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </section>
 
+    <section id="high-scores">
+        <h2>Mejores Puntajes</h2>
+        <p>Aquí se muestran los mejores puntajes y partidas ganadas almacenados en localStorage</p>
+    </section>
+
+    <section id="game-board">
+        <section id="header-board">
+            <h2 id="turn-count">Turn</h2><br>
+            <h2>PUNTAJES</h2>
+            <h3>Lista de puntos actuales</h3>
         </section>
-    </header>
+
+        <section id="main-board">
+            <section id="players-board" class="grid-container">
+            
+            </section>
+            <div class="ball-number-container">
+                <p id="ball-number">IDEN NUM</p>
+            </div>
+        </section>
+
+        <section id="nextturn-board">
+            <h2>CONTINUAR?</h2>
+        </section>
+
+    </section>
+
+
+    <!--Script-->
+    <script type="module" src="./dist/main.js"></script>
+
 
 </body>
 
