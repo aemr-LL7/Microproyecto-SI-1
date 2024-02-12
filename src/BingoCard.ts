@@ -81,56 +81,6 @@ export class BingoCard {
     return true;
   }
 
-  hasPatternEssai(pattern: string): boolean {
-    if (pattern === "horizontal") {
-      for (let i = 0; i < this.maxSize; i++) {
-        let isRowComplete = true;
-        for (let j = 0; j < this.maxSize; j++) {
-          if (this.cardMatrix[i][j] !== -1) {
-            isRowComplete = false;
-            break;
-          }
-        }
-        if (isRowComplete) {
-          return isRowComplete;
-        }
-      }
-    } else if (pattern === "vertical") {
-      for (let j = 0; j < this.maxSize; j++) {
-        let isColumnComplete = true;
-        for (let i = 0; i < this.maxSize; i++) {
-          if (this.cardMatrix[i][j] !== -1) {
-            isColumnComplete = false;
-            break;
-          }
-        }
-        if (isColumnComplete) {
-          return isColumnComplete;
-        }
-      }
-    } else if (pattern === "diagonal") {
-      let isMainDiagComplete = true;
-      let isSecondaryDiagComplete = true;
-
-      for (let i = 0; i < this.maxSize; i++) {
-        if (this.cardMatrix[i][i] !== -1) {
-          isMainDiagComplete = false;
-        }
-        if (this.cardMatrix[i][this.maxSize - 1 - i] !== -1) {
-          isSecondaryDiagComplete = false;
-        }
-      }
-      if (isMainDiagComplete || isSecondaryDiagComplete) {
-        return isMainDiagComplete || isSecondaryDiagComplete;
-      }
-    } else if (pattern === "full") {
-      if (this.isComplete()) {
-        return this.isComplete();
-      }
-    }
-    return false;
-  }
-
   hasPattern(patternId: number): boolean {
     switch (patternId) {
       case 1: // Horizontal
